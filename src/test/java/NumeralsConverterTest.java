@@ -13,10 +13,21 @@ public class NumeralsConverterTest {
 
         assertEquals(expected, result);
     }
+
     @Test
     public void testMCMXLIVToArabicSuccess() {
         String romanNumeral = "MCMXLIV";
         int expected = 1944;
+
+        int result = NumeralsConverter.convertRomanToArabic(romanNumeral);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testMCMIIIToArabicSuccess() {
+        String romanNumeral = "MCMIII";
+        int expected = 1903;
 
         int result = NumeralsConverter.convertRomanToArabic(romanNumeral);
 
