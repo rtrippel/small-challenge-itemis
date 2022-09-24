@@ -1,34 +1,27 @@
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NumeralsConverterTest {
 
-    @Test
-    public void testMMVIToArabicSuccess() {
-        String romanNumeral = "MMVI";
-        int expected = 2006;
+    private static Stream<Arguments> provideRomanAndArabicNumerals() {
 
-        int result = NumeralsConverter.convertRomanToArabic(romanNumeral);
-
-        assertEquals(expected, result);
+        return Stream.of(
+                Arguments.of(2022, "MMXXII"),
+                Arguments.of(888, "DCCCLXXXVIII"),
+                Arguments.of(2006, "MMVI"),
+                Arguments.of(1944, "MCMXLIV"),
+                Arguments.of(1903, "MCMIII")
+        );
     }
 
-    @Test
-    public void testMCMXLIVToArabicSuccess() {
-        String romanNumeral = "MCMXLIV";
-        int expected = 1944;
-
-        int result = NumeralsConverter.convertRomanToArabic(romanNumeral);
-
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void testMCMIIIToArabicSuccess() {
-        String romanNumeral = "MCMIII";
-        int expected = 1903;
-
+    @ParameterizedTest
+    @MethodSource("provideRomanAndArabicNumerals")
+    public void testRomanToArabicNumeralSuccess(int expected, String romanNumeral)  {
         int result = NumeralsConverter.convertRomanToArabic(romanNumeral);
 
         assertEquals(expected, result);
