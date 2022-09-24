@@ -51,4 +51,4 @@
    * before "?" is the name of the resource
    * between "the name of the resource" and "is" any number of resource types
 4. Algorithm for converting Roman numerals to Arabic
-   * [v1.jpg](https://postimg.cc/tZ55N6JM)
+   * ???
