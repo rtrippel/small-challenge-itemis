@@ -1,6 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The class is designed to store and process the ratio of Intergalactic units - Roman numerals
+ */
 public class IntergalacticUnit {
 
     private static IntergalacticUnit instance;
@@ -16,8 +19,8 @@ public class IntergalacticUnit {
         return instance;
     }
 
-    public void addConformity(String key, String value) {
-        conformityMap.put(key, value);
+    public void addConformity(String iUnit, String romanNumeral) {
+        conformityMap.put(iUnit, romanNumeral);
     }
 
     public String getValue(String key) {

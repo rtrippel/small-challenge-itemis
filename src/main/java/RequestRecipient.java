@@ -4,8 +4,12 @@ import org.apache.commons.lang3.math.NumberUtils;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * This class is responsible for input data, as well as verification of request data
+ */
 public class RequestRecipient {
 
+    // Returns the verified request as a string
     public String getRequest() {
         final Scanner scanner = new Scanner(System.in);
 

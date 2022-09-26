@@ -1,3 +1,6 @@
+/**
+ * The Enum is designed to process the ratio of Arabic numerals - Roman numerals
+ */
 public enum RomanNumeral {
     I(1),
     V(5),

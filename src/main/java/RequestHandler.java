@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * This class processes received commands, calculates data and displays messages.
+ */
 public class RequestHandler {
 
     private final IntergalacticUnit iUnit = IntergalacticUnit.getInstance();
@@ -29,6 +32,7 @@ public class RequestHandler {
             final String[] subStrings = operation.split(" is ");
             final String[] firstPartWords = subStrings[0].split(" ");
             final String resourceName = firstPartWords[firstPartWords.length -1];
+
             if (isUnknownNames(Arrays.copyOf(firstPartWords, firstPartWords.length -1))) return;
             final int resourceAmount = getArabicAmount(Arrays.copyOf(firstPartWords, firstPartWords.length -1));
             final String[] temp = operation.split(" ");
@@ -41,6 +45,7 @@ public class RequestHandler {
                 if (isUnknownNames(iUnits.split(" "))) return;
                 final int arabicAmount = getArabicAmount(iUnits.split(" "));
                 final String outMessage = String.format("%s is %d", iUnits, arabicAmount);
+
                 System.out.println(outMessage);
             } else {
                 final String secondPart =  operation.replace("how many Credits is ", "")
@@ -52,6 +57,7 @@ public class RequestHandler {
                 DecimalFormat format = new DecimalFormat("0.#");
                 final String outMessage
                         = String.format("%s is %s Credits", secondPart, format.format(resourceCost*resourceAmount));
+
                 System.out.println(outMessage);
             }
         } else {

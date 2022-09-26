@@ -1,6 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The class is designed to store and process the ratio of the resource names and their cost.
+ */
 public class Resource {
 
     private static Resource instance;
