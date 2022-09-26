@@ -5,6 +5,8 @@ public class NumeralsConverter {
         int current;
         int next;
 
+        if (romanNumeral.length() ==  1) return RomanNumeral.valueOf(romanNumeral).getArabicValue();
+
         for (int i = 0; i < romanNumeral.length() - 1; i++) {
             current = RomanNumeral.valueOf(String.valueOf(romanNumeral.charAt(i))).getArabicValue();
             next = RomanNumeral.valueOf(String.valueOf(romanNumeral.charAt(i + 1))).getArabicValue();

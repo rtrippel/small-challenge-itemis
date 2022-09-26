@@ -1,6 +1,7 @@
 import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class RequestRecipient {
@@ -12,6 +13,7 @@ public class RequestRecipient {
     }
 
     private String verifyRequest(String request) {
+        if (Objects.equals(request, "/q")) return request;
 
         if (isRequestContainsIs(request) &&
                 (isCalculationRequestCorrect(request)
